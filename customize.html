@@ -1,0 +1,131 @@
+ <html><head><script src="/bootstrap.js"></script>
+  <meta charset="UTF-6">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heartstrings - Customize Your Experience</title>
+  <style>
+    /* Love-themed CSS styles */
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+    body {
+      font-family: 'Parisienne', cursive;
+      background: linear-gradient(to bottom, #ff69b4, #fa8072);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    header a {
+      color: #FFFFFF;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    header a:hover {
+      color: #FF69B4;
+    }
+
+    .settings-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .settings-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.1);
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .settings-dropdown-content a {
+      color: #FFFFFF;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .settings-dropdown-content a:hover {
+      background-color: #FF69B4;
+    }
+
+    .settings-dropdown:hover .settings-dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .customization-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .customization-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+      padding: 1rem;
+      margin: 1rem;
+      width: 300px;
+      text-align: center;
+    }
+
+    .customization-card h3 {
+      margin-top: 0;
+    }
+
+    .customization-card label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .customization-card input,
+    .customization-card select {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      font-family: 'Lucida Calligraphy', cursive;
+      margin-bottom: 1rem;
+    }
+
+    .customization-card button {
+      background-color: #FF69B4;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .customization-card button:hover {
+      background-color: #DA70D6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">LarrisaXOpoku</a>
+    <div>
+      <a href="https://heartstrings.com/quizzes">Quizzes</a>
+      <a href="https://heartstrings.com/signin">Sign In</a>
+      <div class="settings-dropdown">
+        <a href="https://heartstrings.com/settings">Settings</a>
+        <div class="settings-dropdown-content"> <a href="https://heartstrings.com/settings/profile">Profile</a> <a href="https://heartstrings.com/settings/notifications">Notifications</a> <a href="https://heartstrings.com/settings/privacy">Privacy</a> <a href="https://heartstrings.com/settings/customization">Customization</a> </div> </div> </div> </header> <main> <div class="customization-container"> <div class="customization-card"> <h3>Theme Color</h3> <label for="theme-color">Choose a color:</label> <input type="color" id="theme-color" name="theme-color" value="#FF69B4"> <button onclick="updateThemeColor()">Apply</button> </div> <div class="customization-card"> <h3>Card Customization</h3> <label for="card-color">Card Color:</label> <input type="color" id="card-color" name="card-color" value="#FFFFFF"> <label for="card-shape">Card Shape:</label> <select id="card-shape" name="card-shape"> <option value="rounded">Rounded</option> <option value="square">Square</option> <option value="circular">Circular</option> </select> <button onclick="updateCardStyle()">Apply</button> </div> <div class="customization-card"> <h3>Button Customization</h3> <label for="button-color">Button Color:</label> <input type="color" id="button-color" name="button-color" value="#FF69B4"> <label for="button-shape">Button Shape:</label> <select id="button-shape" name="button-shape"> <option value="rounded">Rounded</option> <option value="square">Square</option> </select> <button onclick="updateButtonStyle()">Apply</button> </div> </div> <script> function updateThemeColor() { const themeColor = document.getElementById("theme-color").value; document.body.style.backgroundImage = `linear-gradient(to bottom right, ${themeColor}, ${themeColor})`; } function updateCardStyle() { const cardColor = document.getElementById("card-color").value; const cardShape = document.getElementById("card-shape").value; const cards = document.querySelectorAll(".customization-card"); cards.forEach(card => { card.style.backgroundColor = cardColor; if (cardShape === "rounded") { card.style.borderRadius = "10px"; } else if (cardShape === "square") { card.style.borderRadius = "0"; } else { card.style.borderRadius = "50%"; } }); } function updateButtonStyle() { const buttonColor = document.getElementById("button-color").value; const buttonShape = document.getElementById("button-shape").value; const buttons = document.querySelectorAll(".customization-card button"); buttons.forEach(button => { button.style.backgroundColor = buttonColor; if (buttonShape === "rounded") { button.style.borderRadius = "5px"; } else { button.style.borderRadius = "0"; } }); } </script> </main> </body></html>
